@@ -1,0 +1,111 @@
+                return Task.FromResult(new ValidateResult
+                {
+                    Code = "GTW-BRQ-EMPTYAPPID",
+                    HttpStatus = HttpStatusCode.BadRequest,
+                    Message = "AppID 为空"
+                });
+				
+                        return Task.FromResult(new ValidateResult()
+                        {
+                            Code = "GTW-BRQ-ERRORAPPSTATUS",
+                            HttpStatus = HttpStatusCode.BadRequest,
+                            Message = "APP状态异常"
+                        });
+						return Task.FromResult(new ValidateResult
+                        {
+                            Code = "GTW-BRQ-ERRORAPPID",
+                            HttpStatus = HttpStatusCode.BadRequest,
+                            Message = "APPID校验失败"
+                        });
+						return Task.FromResult(new ValidateResult()
+                    {
+                        Code = "GTW-BRQ-NOCOMPETENCE",
+                        HttpStatus = HttpStatusCode.BadRequest,
+                        Message = "未经授权访问"
+                    });
+					
+					return Task.FromResult(new ValidateResult()
+                {
+                    Code = "GTW-BRQ-ERRORCOMPETENCE",
+                    HttpStatus = HttpStatusCode.Unauthorized,
+                    Message = "授权访问异常"
+                });
+				
+				return Task.FromResult(new ValidateResult
+                            {
+                                Code = "GTW-BRQ-DISTRUST",
+                                HttpStatus = HttpStatusCode.BadRequest,
+                                Message = "IP黑名单"
+                            });
+							
+							return Task.FromResult(new ValidateResult
+            {
+                Code = "GTW-BRQ-NOIP",
+                HttpStatus = HttpStatusCode.BadRequest,
+                Message = "IP为空"
+            });
+			
+			return Task.FromResult(new ValidateResult()
+                {
+                    Code = "GTW-BRQ-FREQUENTLY",
+                    HttpStatus = HttpStatusCode.BadGateway,
+                    Message = "访问过于频繁，请稍后重试"
+                });
+				
+				return Task.FromResult<ValidateResult>(new ValidateResult
+                    {
+                        Code = "GTW-BRQ-NOHEADER",
+                        HttpStatus = HttpStatusCode.BadRequest,
+                        Message = string.Format("缺少必要的消息头:{0}", header)
+                    });
+					
+					return Task.FromResult(new ValidateResult
+                {
+                    Code = "GTW-BRQ-INVALIDTIMESTAMP",
+                    HttpStatus = HttpStatusCode.BadRequest,
+                    Message = "时间戳格式不正确"
+                });
+				return Task.FromResult(new ValidateResult()
+                {
+                    Code = "GTW-BRQ-INVALIDTIMESTAMP",
+                    HttpStatus = HttpStatusCode.BadRequest,
+                    Message = "时间戳已失效"
+                });
+				return Task.FromResult(new ValidateResult()
+                {
+                    Code = "GTW-BRQ-INVALIDTIMESTAMPSIGN",
+                    HttpStatus = HttpStatusCode.BadRequest,
+                    Message = "时间戳签名验证失败"
+                });
+				return await Task.FromResult(new ValidateResult
+                {
+                    Code = "GTW-UNKNOW",
+                    HttpStatus = HttpStatusCode.InternalServerError,
+                    Message = "已加载的服务信息丢失"
+                });
+				
+				return await Task.FromResult(new ValidateResult
+                    {
+                        Code = "GTW-BRQ-NOHEADER",
+                        HttpStatus = HttpStatusCode.BadRequest,
+                        Message = "访问令牌不存在"
+                    });
+					return await Task.FromResult(new ValidateResult
+                    {
+                        Code = "GTW-BRQ-INVALIDTOKEN",
+                        HttpStatus = HttpStatusCode.BadRequest,
+                        Message = "访问令牌内容为空"
+                    });
+					eturn await Task.FromResult(new ValidateResult
+                            {
+                                Code = "GTW-BRQ-INVALIDTOKEN",
+                                HttpStatus = HttpStatusCode.BadRequest,
+                                Message = string.Format("令牌校验失败：‘{0}’", resp.ResultMessage)
+                            });
+							
+							return await Task.FromResult(new ValidateResult
+                    {
+                        Code = "GTW-SRV-TOKENSERVICEERROR",
+                        HttpStatus = HttpStatusCode.InternalServerError,
+                        Message = "令牌服务响应异常"
+                    });
