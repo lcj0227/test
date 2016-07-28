@@ -1,107 +1,1 @@
-<!DOCTYPE html>
-<html>
-
-	<head>
-		<!--<script src="js/console_runner.js" type="text/javascript" charset="utf-8"></script>-->
-		<!--<script src="js/events_runner.js" type="text/javascript" charset="utf-8"></script>-->
-		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>shuffle</title>
-		<style type="text/css">
-			.container {
-				width: 320px;
-			}
-			
-			.item {
-				box-sizing: border-box;
-				background-color: #eee;
-				border: 1px solid black;
-				display: inline-block;
-				width: 100px;
-				height: 100px;
-				text-align: center;
-    				line-height: 100px;
-			}
-			
-			/*.item-enter {*/
-				/*opacity: 0;*/
-				/* the state right after enter (enter from this state) */
-			/*}*/
-			
-			/*.item-leave {*/
-				/*opacity: 0;*/
-				/* the state right before leave (leave to this state) */
-			/*}*/
-			
-			/*.item-enter-active,*/
-			/*.item-leave-active {*/
-				/*transition: opacity .5s ease;*/
-				 /*applied during enter/leave transition*/ 
-			/*}*/
-			
-			.item-move {
-				/*border-color: red;*/
-				transition: transform .5s cubic-bezier(.2, 0, .3, 0.2);
-				/* applied during moving transition */
-			}
-			
-			
-		</style>
-
-	</head>
-
-	<body>
-		<div id="box">
-			<!--<h1 v-if="false">Yes</h1>
-			<h1 v-else>No</h1>-->
-			<button @click="shuffle">shuffle</button>
-			<button @click="add">add</button>
-			<button @click="remove">remove</button>
-			<div class="container">
-				<div class="item" v-for="item in items" transition="item">
-					{{item.text}}
-				</div>
-			</div>
-		</div>
-		<div>
-			<input v-model="parentMsg">
-			<br>
-			<child v-bind:my-message="parentMsg">{{parentMsg}}</child>
-		</div>
-		<!--<script src="js/timeOut.js" type="text/javascript" charset="utf-8"></script>-->
-		<!--<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>-->
-		<script src="js/lodash.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/animate-move.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			var items = []
-			for (var i = 0; i < 9; i++) {
-				items.push({
-					text: i
-				})
-			}
-			var vm = new Vue({
-				el: "body",
-				data: {
-					items: items
-				},
-				methods: {
-					shuffle: function() {
-						this.items = _.shuffle(this.items)
-						console.log(_.shuffle(this.items))
-					},
-					add: function() {
-						this.items.push({
-							text: this.items.length
-						})
-					},
-					remove: function() {
-						this.items.pop()
-					}
-				}
-			})
-			
-		</script>
-		<!--<script src="js/reload_init.js" type="text/javascript" charset="utf-8"></script>-->
-	</body>
-
-</html>
+<!DOCTYPE html><html>	<head>		<!--<script src="js/console_runner.js" type="text/javascript" charset="utf-8"></script>-->		<!--<script src="js/events_runner.js" type="text/javascript" charset="utf-8"></script>-->		<meta charset="utf-8">		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />		<title>shuffle</title>		<style type="text/css">			.container {				width: 320px;			}						.item {				box-sizing: border-box;				background-color: #eee;				border: 1px solid black;				display: inline-block;				width: 100px;				height: 100px;				text-align: center;    				line-height: 100px;			}						/*.item-enter {*/				/*opacity: 0;*/				/* the state right after enter (enter from this state) */			/*}*/						/*.item-leave {*/				/*opacity: 0;*/				/* the state right before leave (leave to this state) */			/*}*/						/*.item-enter-active,*/			/*.item-leave-active {*/				/*transition: opacity .5s ease;*/				 /*applied during enter/leave transition*/ 			/*}*/						.item-move {				/*border-color: red;*/				transition: transform .5s cubic-bezier(.2, 0, .3, 0.2);				/* applied during moving transition */			}								</style>	</head>	<body>		<div id="box">			<!--<h1 v-if="false">Yes</h1>			<h1 v-else>No</h1>-->			<button @click="shuffle">shuffle</button>			<button @click="add">add</button>			<button @click="remove">remove</button>			<div class="container">				<div class="item" v-for="item in items" transition="item">					{{item.text}}				</div>			</div>		</div>		<div>			<input v-model="parentMsg">			<br>			<child v-bind:my-message="parentMsg">{{parentMsg}}</child>		</div>		<!--<script src="js/timeOut.js" type="text/javascript" charset="utf-8"></script>-->		<!--<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>-->		<script src="js/lodash.min.js" type="text/javascript" charset="utf-8"></script>		<script src="js/animate-move.js" type="text/javascript" charset="utf-8"></script>		<script type="text/javascript">			var items = []			for (var i = 0; i < 9; i++) {				items.push({					text: i				})			}			var vm = new Vue({				el: "body",				data: {					items: items				},				methods: {					shuffle: function() {						this.items = _.shuffle(this.items)						console.log(_.shuffle(this.items))					},					add: function() {						this.items.push({							text: this.items.length						})					},					remove: function() {						this.items.pop()					}				}			})					</script>		<!--<script src="js/reload_init.js" type="text/javascript" charset="utf-8"></script>-->	</body></html>
