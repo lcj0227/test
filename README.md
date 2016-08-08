@@ -1,2 +1,1 @@
-# test
-a test project
+auto commit
