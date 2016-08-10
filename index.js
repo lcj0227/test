@@ -2,7 +2,7 @@
 let exec = require('./execPromise'),
   commitByTimes = require('./commitByTimes'),
   gitConfig = require('./config'),
-  getRandomNumber = (n,m)=> Math.round(Math.random()*(m-n)) + n
+  getRandomNumber = (n,m)=> Math.round(Math.random()*(m-n)) + n;
 const gitInit = ()=> {
   exec('git init')
     .then(stdout=> exec(`git config user.name ${ gitConfig.username }`))
